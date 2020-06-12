@@ -12,15 +12,12 @@ import github from '../Imgs/github.png'
 import bootstrap from '../Imgs/bootStrap.png'
 import footBall from '../Imgs/footBall.png'
 
-
-
-
-
 const useStyles = makeStyles({
     particlesCanvas: {
         position: 'absolute',
         top:'0',
         zIndex:'-1',
+        opacity:.7
     }
 })
 
@@ -33,7 +30,7 @@ const Particless = () => {
             params={{
                 particles: {
                     number: {
-                        value: 150,
+                        value: 80,
                         attract: {
                             enable: true,
                             rotateX: 10,
@@ -52,12 +49,12 @@ const Particless = () => {
                         image: [
                             { src: reactIcon, },
                             { src: html,      },
-                            { src: css,    },
-                            { src: mobile,      },
-                            { src: js,      },
-                            { src: github,      },
-                            { src: bootstrap,      },
-                            { src: footBall,      }
+                            { src: css,       },
+                            { src: mobile,    },
+                            { src: js,        },
+                            { src: github,    },
+                            { src: bootstrap, },
+                            { src: footBall,  }
                         ]
                     },
                     size: {

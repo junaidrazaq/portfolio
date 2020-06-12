@@ -13,18 +13,19 @@ const headStyles = {
     color: 'white'
 }
 
-// CSS Styles
-const useStyles = makeStyles(theme => ({
-    box: {
+export const centerBox = {
         position: 'absolute',
-        top: '50%',
         left: '50%',
         marginRight: '-50%',
-        transform: 'translate(-50%, -50%)', 
+        transform: 'translate(-50%, -50%)'
+}
+
+// CSS Styles
+  const useStyles = makeStyles(theme => ({
+    box: {
+        ...centerBox,
+        top:'50%',
         textAlign:'center',
-        // backgroundColor: '#aaa',
-        // borderRadius:theme.spacing(4),
-        // padding: theme.spacing(1)
     },
     avatar: {
         width: theme.spacing(19),

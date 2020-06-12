@@ -1,3 +1,23 @@
+/* PC-IMAGE */
+body{
+    background: url(Imgs/pc-back-img.jpg) no-repeat center top fixed;
+    background-size: cover;
+    -webkit-background: cover;
+    -moz-background: cover;
+    -o-background: cover;
+}
+
+/* SMALLER-PC-IMAGE */
+@media screen and (max-width:960px){
+    body{
+        background: url(Imgs/pc-back-img1.jpg) no-repeat center bottom fixed;
+        background-size: cover;
+        -webkit-background: cover;
+        -moz-background: cover;
+        -o-background: cover;
+}}
+
+/* MOBILE-IMAGE */
 @media screen and (max-width:500px){
     body{
         background: url(Imgs/back-img.jpg) no-repeat center center fixed;
@@ -5,5 +25,4 @@
         -webkit-background: cover;
         -moz-background: cover;
         -o-background: cover;
-}
-}
+}}
