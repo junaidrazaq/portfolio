@@ -1,51 +1,16 @@
 import React from 'react'
 import avatar from '../Imgs/avatar.png'
 import { 
-    Box, AppBar, Toolbar, Grid,  
-    Typography, Avatar, Divider, makeStyles, 
+    Box, Grid, Typography, Avatar,  
     } from '@material-ui/core'
 import Typed from 'react-typed'
+import Styles from './Styles'
 
-const headStyles = {
-    backgroundColor:'black',
-    borderRadius:12,
-    padding:5,
-    color: 'white'
-}
-
-export const centerBox = {
-        position: 'absolute',
-        left: '50%',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
-}
-
-// CSS Styles
-  const useStyles = makeStyles(theme => ({
-    box: {
-        ...centerBox,
-        top:'50%',
-        textAlign:'center',
-    },
-    avatar: {
-        width: theme.spacing(19),
-        height: theme.spacing(19),
-        margin: theme.spacing(6),
-    },
-    headText: {
-        color: '#aaa',
-        zIndex:1,
-        top:'2vh',
-        textAlign:'center',
-        ...headStyles
-    },
-    headConfig: headStyles
-}))
 
 const Header = () => {
-    const classes = useStyles()
+    const classes = Styles()
     return (
-        <Box className={classes.box}>
+        <Box className={classes.headerBox}>
             <Grid container justify="center">
                 <Avatar className={classes.avatar} src={avatar} alt='ProfilePic'></Avatar>
             </Grid>

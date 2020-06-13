@@ -7,64 +7,15 @@ import {
     List, ListItem, ListItemIcon, ListItemText, 
     } from '@material-ui/core'
 import avatar from '../Imgs/avatar.png'
-import { makeStyles } from '@material-ui/core/styles';
 //Icons
 import TouchAppOutlinedIcon from '@material-ui/icons/TouchAppOutlined';
-import Home from '@material-ui/icons/Home';
-import AssignmentInd from '@material-ui/icons/AssignmentInd';
-import Apps from '@material-ui/icons/Apps';
-import ContactMail from '@material-ui/icons/ContactMail';
-
-
-// CSS Styles //
-const useStyles = makeStyles(theme=>({
-    menuSlideContainer: {
-        width: 250,
-        background: '#777',
-        height: '100vh'
-    },
-    avatar: {
-        display: 'block',
-        margin: '0.5rem auto',
-        width: theme.spacing(10),
-        height: theme.spacing(10)
-    },
-    listItem: {
-        margin: '10px 0',
-        color:'#ddd'
-    }
-}))
-
-const menuItems = [
-    {
-        listIcon: <Home/>,
-        listText: 'Home' ,
-        listPath: '/'
-    },
-    {
-        listIcon: <AssignmentInd/>,
-        listText: 'About',
-        listPath: '/About' 
-    },
-    {
-        listIcon: <Apps/>,
-        listText: 'Porfolio' 
-    },
-    {
-        listIcon: <ContactMail/>,
-        listText: 'Contact' 
-    }
-]
-
+import Styles from './Styles'
+import {menuItems} from './ListItems'
 
 
 const Navbar = () => {
-
     // State for menu sliding in and out
-    const [state, setState] = useState({
-        // Initial state
-        right: false
-    })
+    const [state, setState] = useState({ right: false })
 
     
     // Three different ways you can do this.
@@ -90,12 +41,12 @@ const Navbar = () => {
         } a() } */
 
 
-    const classes = useStyles();
+    const classes = Styles();
 
     //---------- S I D E -- M E N U ----------\\
     const sideMenu = (slider) => (
         <Box component='div' className={classes.menuSlideContainer} onClick={toggleMenu(slider, false)}>
-        <Avatar className={classes.avatar} src={avatar} alt='ProfilePic'></Avatar>
+        <Avatar className={classes.navatar} src={avatar} alt='ProfilePic'></Avatar>
         <Divider/> {/* The thin line under the avatar */}
         <List>
             {/* Display each menu link by mapping through them */}
@@ -110,8 +61,6 @@ const Navbar = () => {
         </List>
     </Box>
     )
-
-
 
     return (
             <Box component='nav'>
