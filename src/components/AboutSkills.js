@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Styles from './Styles'
 
 // ListItems
@@ -21,93 +21,65 @@ const AboutSkills = () => {
       setOpen(!open);
     };
 
-    return (
+    const outputList = () => (
         <>
             <List
                 style={{color:'white'}}
                 component="nav"
                 className={classes.root}
             >
-                {listItems.map((item, index) => {
+                {
+                listItems.map((item, index) => {
+                    // if expandable items exist, show them
                     if(item.expan) 
-                    {
-                        return <>
-                                <ListItem button onClick={handleClick}>
-                                    <ListItemIcon style={{color:'white'}}>
-                                        {item.listIcon}
-                                    </ListItemIcon>
-                                    <ListItemText primary={item.listText} />
-                                    {open ? <ExpandLess /> : <ExpandMore />}
-                                </ListItem>
+                    {           {/* Use fragment instad of <></> because key attribute is required */}
+                        return <Fragment key={index}>
+                                    <ListItem button onClick={handleClick} className={classes.aboutList}>
+                                        <ListItemIcon className={classes.aboutIcon}>
+                                            {item.listIcon}
+                                        </ListItemIcon>
+                                        <ListItemText primary={item.listText} />
+                                        {open ? <ExpandLess /> : <ExpandMore />}
+                                    </ListItem>
 
-                                <Collapse in={open} timeout="auto" unmountOnExit>
-                                    <List component="div" disablePadding>
-                                        <ListItem button className={classes.nested}>
-                                            <ListItemIcon>
-                                            <StarBorder />
-                                            </ListItemIcon>
-                                            <ListItemText primary={item.firstText} />
-                                        </ListItem>
+                                    <Collapse in={open} timeout="auto" unmountOnExit>
+                                        
+                                        <List component="div" disablePadding>
+                                            <ListItem button className={classes.nested}>
+                                                <ListItemIcon>
+                                                    <StarBorder />
+                                                </ListItemIcon>
+                                                <ListItemText classes={{primary:classes.expanText}} primary={item.firstText} />
+                                            </ListItem>
 
-                                    {item.secondText 
-                                    ?   <ListItem button className={classes.nested}>
-                                            <ListItemIcon>
-                                            <StarBorder />
-                                            </ListItemIcon>
-                                            <ListItemText primary={item.secondText} />
-                                        </ListItem>
-                                    : console.log('No Third Item')
-                                    }
-                                    
+                                        {   item.secondText //if seconditem exists...
+                                          ? <ListItem button className={classes.nested}>
+                                                <ListItemIcon>
+                                                <StarBorder />
+                                                </ListItemIcon>
+                                                <ListItemText classes={{primary:classes.expanText}} primary={item.secondText} />
+                                            </ListItem>
+                                            : console.log('No Third Item')}
+                                        </List>
 
-                                    </List>
-                                </Collapse>
-                                </>
+                                    </Collapse>
+                                </Fragment>
                     } else {
-                        return <ListItem button key={index}>
-                                    <ListItemIcon style={{color:'white'}}>
+                        return <ListItem button className={classes.aboutList} key={index}>
+                                    <ListItemIcon className={classes.aboutIcon}>
                                         {item.listIcon}
                                     </ListItemIcon>
-                                    <ListItemText primary={item.listText} />
+                                    <ListItemText classes={{primary:classes.unExpanText}} primary={item.listText} />
                                 </ListItem>
                     }    
                 })}    
-            </List>  
+            </List>
         </>
+    )
+
+    return (
+        outputList()
     )
 }
 
 export default AboutSkills
-
-/*<ListItem button>
-                    <ListItemIcon style={{color:'white'}}>
-                        <SendIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Sent mail" />
-                </ListItem>
-                
-                <ListItem button>
-                    <ListItemIcon>
-                        <DraftsIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Drafts" />
-                </ListItem>
-                
-                <ListItem button onClick={handleClick}>
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Inbox" />
-                    {open ? <ExpandLess /> : <ExpandMore />}
-                </ListItem>
-
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItem button className={classes.nested}>
-                            <ListItemIcon>
-                            <StarBorder />
-                            </ListItemIcon>
-                            <ListItemText primary="Starred" />
-                        </ListItem>
-                    </List>
-                </Collapse> */

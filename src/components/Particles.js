@@ -11,18 +11,10 @@ import js from '../Imgs/js.png'
 import github from '../Imgs/github.png'
 import bootstrap from '../Imgs/bootStrap.png'
 import footBall from '../Imgs/footBall.png'
-
-const useStyles = makeStyles({
-    particlesCanvas: {
-        position: 'absolute',
-        top:'0',
-        zIndex:'-1',
-        opacity:.7
-    }
-})
+import Styles from './Styles'
 
 const Particless = () => {
-    const classes = useStyles()
+    const classes = Styles()
     return (
         <>
         <Particles

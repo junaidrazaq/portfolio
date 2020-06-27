@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import MobileRightMenuSlider from '@material-ui/core/Drawer'
 import { 
     Box, AppBar, Toolbar, IconButton, 
@@ -45,7 +45,7 @@ const Navbar = () => {
 
     //---------- S I D E -- M E N U ----------\\
     const sideMenu = (slider) => (
-        <Box component='div' className={classes.menuSlideContainer} onClick={toggleMenu(slider, false)}>
+    <Box component='div' className={classes.menuSlideContainer} onClick={toggleMenu(slider, false)}>
         <Avatar className={classes.navatar} src={avatar} alt='ProfilePic'></Avatar>
         <Divider/> {/* The thin line under the avatar */}
         <List>
@@ -69,7 +69,7 @@ const Navbar = () => {
                         <IconButton edge="start" onClick={toggleMenu("right", true)}>
                             <TouchAppOutlinedIcon style={{color:'white'}}/>
                         </IconButton>
-                        <Typography>My Portfolio</Typography>
+                        <Typography>Junaid Razaq</Typography>
                         <MobileRightMenuSlider anchor="left" open={state.right} onClose={toggleMenu('right', false)}>
                             {sideMenu("right")}
                         </MobileRightMenuSlider>

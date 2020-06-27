@@ -1,5 +1,6 @@
 // import React from 'react'
 import { makeStyles } from '@material-ui/core'
+// import fonts from 'https://fonts.googleapis.com/css?family=Indie+Flower';
 
 const centerBox = {
     position: 'absolute',
@@ -11,14 +12,14 @@ const headStyles = {
     borderRadius:12,
     padding:5, color: 'white'}
 
-// Styles for whole app
-
+/* // Styles for whole app \\ */
 const Styles = makeStyles(theme => ({
 
-    // Header \\ // \\ // Header \\
+// Header \\ // \\ // Header \\
     headerBox: {
         ...centerBox,
         top:'50%',
+        zIndex:1,
         textAlign:'center',
     },
     avatar: {
@@ -28,15 +29,14 @@ const Styles = makeStyles(theme => ({
     },
     headText: {
         color: '#aaa',
-        zIndex:1,
         top:'2vh',
         textAlign:'center',
         ...headStyles
     },
     headConfig: headStyles,
-    // Header \\ // \\ // Header \\
+// Header \\ // \\ // Header \\
 
-    // Navbar \\ // \\ // Navbar \\ 
+// Navbar \\ // \\ // Navbar \\ 
     menuSlideContainer: {
         width: 250,
         background: '#777',
@@ -52,17 +52,13 @@ const Styles = makeStyles(theme => ({
         margin: '10px 0',
         color:'#ddd'
     },
-    // Navbar \\ // \\ // Navbar \\ 
+// Navbar \\ // \\ // Navbar \\ 
 
-    // AboutSkills \\ // AboutSkills \\
-    root: {
-        width: '100%',
-        maxWidth: 360
+// About \\ // About \\ // About \\
+    aboutContainer: {
+        background:'#ebf0f6',
+        height:'100vh'
     },
-    nested: { paddingLeft: theme.spacing(4)},
-    // AboutSkills \\ // AboutSkills \\
-
-    // About \\ // About \\ // About \\
     aboutBox: {
         ...centerBox,
         top:'13%',
@@ -72,22 +68,77 @@ const Styles = makeStyles(theme => ({
         padding:20,
         marginTop:10,
         textAlign:'center',
-        zIndex:-1,
+        // zIndex:-1,
         display:'inline-block'
     },
     aboutText:{
-        color: 'coral',
-        position:'relative',
+        color: '#ac3b61',
+        position:'relative'
     },
-    centerText:{
+    inAboutText:{
         color:'white',
         display:'inline-block',
-        lineHeight:1.6,
-        paddingLeft:10,
-        textAlign:'start',
-        marginTop:8
-    }}
-    // About \\ // About \\ // About \\
+        lineHeight:1.7,
+        backgroundColor:'grey',
+        marginLeft:12,
+        padding:10,
+        textAlign:'center',
+        marginTop:8,
+        borderRadius:10
+    },
+    headColor:{
+        color:'black'
+    },
+        // AboutSkills \\ // AboutSkills \\
+            root: {
+                width: '100%',
+                maxWidth: 360
+            },
+            expanText:{
+                fontSize:12,
+                color:'#55BCC9'
+            },
+            unExpanText:{ marginRight:0 },
+            aboutList: { color:'black' },
+            aboutIcon:{ color:'maroon' },
+            nested: { paddingLeft: theme.spacing(3)},
+        // AboutSkills \\ // AboutSkills \\
+
+// About \\ // About \\ // About \\
+
+// Portfolio \\ // Portfolio \\ // Portfolio \\
+    portContainer: {
+        background: '#ebf0f6',
+        height:'100%',
+        // paddingTop:theme.spacing(8),
+    },
+    portTitle: {
+        position:'relative',
+        top:10,
+        letterSpacing:'1.1rem', 
+        marginLeft:theme.spacing(2),
+        fontSize:'2rem',
+        fontFamily:'Libre Baskerville, serif'
+    },
+    cardContainer: {
+        maxWidth: 375,
+        margin:'2rem auto'
+    },
+    cardImage: {
+        boxShadow: "0px 4px 1px #9E9E9E",
+        borderRadius:1
+    },
+// Portfolio \\ // Portfolio \\ // Portfolio \\
+        
+// ParticleJs \\ // ParticleJs \\ // ParticleJs \\
+    particlesCanvas: {
+        position: 'absolute',
+        // top:'0',
+        zIndex:'0',
+        opacity:.7
+    }
+// ParticleJs \\ // ParticleJs \\ // ParticleJs \\
+}
 ))
 
 export default Styles
