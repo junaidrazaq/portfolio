@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar'
 // import Particless from './Particles'
-import { Box, Grid, Typography, 
+import { Box, Grid, Typography, Container, 
     } from '@material-ui/core'
 import { Random } from 'react-animated-text';
 import Styles from './Styles'
@@ -43,12 +43,12 @@ const About = () => {
     return (
         <>
             {/* <Particless/> */}
-            <Box className={classes.aboutContainer}>
             <Navbar/>
+            <Container maxWidth='xl' className={classes.aboutContainer}>
                 <Box className={classes.aboutBox}>
                         {colorText(color.message, color.colors)}
                 </Box>
-                <Grid container style={{position:'relative' ,top:'17vh', textAlign:'center'}}>
+                <Grid container >
                     <Grid item xs={7}>
                         <Typography variant='h5' className={classes.aboutText}>
                             <span className={classes.headColor}>About</span> Me
@@ -70,7 +70,7 @@ const About = () => {
 
                     </Grid>
                 </Grid>
-            </Box>
+            </Container>
         </>
     )
 }

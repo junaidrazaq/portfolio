@@ -1,5 +1,6 @@
 // import React from 'react'
 import { makeStyles } from '@material-ui/core'
+import Background from '../Imgs/pc-back-img.jpg'
 // import fonts from 'https://fonts.googleapis.com/css?family=Indie+Flower';
 
 const centerBox = {
@@ -56,20 +57,21 @@ const Styles = makeStyles(theme => ({
 
 // About \\ // About \\ // About \\
     aboutContainer: {
-        background:'#ebf0f6',
-        height:'100vh'
+        background:'grey',
+        // display:'inline-block'
+        minHeight:'92vh'
     },
     aboutBox: {
-        ...centerBox,
+        // ...centerBox,
         top:'13%',
         color:'white',
         letterSpacing:.1,
         fontSize:20,
         padding:20,
-        marginTop:10,
+        // marginTop:10,
         textAlign:'center',
         // zIndex:-1,
-        display:'inline-block'
+        // display:'inline-block'
     },
     aboutText:{
         color: '#ac3b61',
@@ -108,9 +110,10 @@ const Styles = makeStyles(theme => ({
 
 // Portfolio \\ // Portfolio \\ // Portfolio \\
     portContainer: {
-        background: '#ebf0f6',
+        // background: '#ebf0f6',
+        background: 'grey',
         height:'100%',
-        // paddingTop:theme.spacing(8),
+        zIndex:'-3'
     },
     portTitle: {
         position:'relative',
@@ -122,7 +125,7 @@ const Styles = makeStyles(theme => ({
     },
     cardContainer: {
         maxWidth: 375,
-        margin:'2rem auto'
+        margin:'1rem auto'
     },
     cardImage: {
         boxShadow: "0px 4px 1px #9E9E9E",
@@ -133,8 +136,7 @@ const Styles = makeStyles(theme => ({
 // ParticleJs \\ // ParticleJs \\ // ParticleJs \\
     particlesCanvas: {
         position: 'absolute',
-        // top:'0',
-        zIndex:'0',
+        zIndex:'-1',
         opacity:.7
     }
 // ParticleJs \\ // ParticleJs \\ // ParticleJs \\

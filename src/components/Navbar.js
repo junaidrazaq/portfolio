@@ -64,7 +64,7 @@ const Navbar = () => {
 
     return (
             <Box component='nav'>
-                <AppBar position="static" style={{background: '#222'}}>
+                <AppBar position="static" style={{background: '#222', zIndex:99}}>
                     <Toolbar>
                         <IconButton edge="start" onClick={toggleMenu("right", true)}>
                             <TouchAppOutlinedIcon style={{color:'white'}}/>

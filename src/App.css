@@ -1,26 +1,35 @@
 /* PC-IMAGE */
-body{
-    background: url(Imgs/pc-back-img.jpg) no-repeat center top fixed;
-    background-size: cover;
+.homeBackImg{
+    background: url(Imgs/pc-back-img.jpg) no-repeat center center;
+    position: absolute;
+    height:100%; width:100%;
+    z-index: -2; /* 1 below the particlesJs */
+    background: cover;
     -webkit-background: cover;
     -moz-background: cover;
     -o-background: cover;
 }
 
 /* SMALLER-PC-IMAGE */
-@media screen and (max-width:960px){
-    body{
-        background: url(Imgs/pc-back-img1.jpg) no-repeat center bottom fixed;
-        background-size: cover;
-        -webkit-background: cover;
-        -moz-background: cover;
-        -o-background: cover;
-}}
+ @media screen and (max-width:960px){
+    .homeBackImg{
+        background: url(Imgs/pc-back-img1.jpg) no-repeat center center;
+        position: absolute;
+        height:100%; width:100%;
+        z-index: -2; /* 1 below the particlesJs */
+        background: contain;
+        -webkit-background: contain;
+        -moz-background: contain;
+        -o-background: contain;
+}} 
 
 /* MOBILE-IMAGE */
 @media screen and (max-width:500px){
-    body{
-        background: url(Imgs/back-img.jpg) no-repeat center center fixed;
+    .homeBackImg{
+        background: url(Imgs/back-img.jpg) no-repeat center center;
+        position: absolute;
+        height:100%; width:100%;
+        z-index: -2; /* 1 below the particlesJs */
         background: cover;
         -webkit-background: cover;
         -moz-background: cover;

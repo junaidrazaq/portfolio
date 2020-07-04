@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <CssBaseline>
-        <Route exact path='/' component={Home}/>
+          <Route exact path='/' component={Home}/>
         <Route path='/About' component={About}/>
         <Route path='/portfolio' component={Portfolio}/>
       </CssBaseline>
