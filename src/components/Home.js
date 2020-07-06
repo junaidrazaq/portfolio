@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import Header from './Header'
 import Particles from './Particles'
 import Styles from './Styles'
-// import { Box, Container } from '@material-ui/core'
 import '../App.css'
 
 const Home = () => {
@@ -11,10 +10,10 @@ const Home = () => {
 
     return (
         <>
-        <div className='homeBackImg'>
-        <Particles/>
         <Navbar/>
-        <Header/>
+        <div className='homeBackImg'>
+            <Particles/>
+            <Header/>
         </div>
         </>
     )

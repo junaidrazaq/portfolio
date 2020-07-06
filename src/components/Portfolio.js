@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Navbar'
 import { Box, Grid, Card, CardMedia, CardActionArea, Typography, CardContent, CardActions, Button } from '@material-ui/core'
 import Styles from './Styles'
@@ -6,13 +6,30 @@ import { Random } from 'react-animated-text'
 import { projectSections } from './ListItems' 
 import Particless from './Particles'
 
+
+
 const Portfolio = () => {
     const classes = Styles()
-    
-    const project = () => (
-        <>
+
+    const project = () => {
+        const openProject = (key) => {
+            key==1 
+            ? window.location.href='https://junaidrazaq.github.io/junaid/Projects/weatherApp/index.html'
+            : key==2 
+            ? window.location.href='https://junaidrazaq.github.io/junaid/Projects/todoApp/index.html'
+            : key==3 
+            ? window.location.href='https://junaidrazaq.github.io/junaid/Projects/RockPaperScissors/index.html'
+            : key==4 
+            ? window.location.href='https://junaidrazaq.github.io/junaid/Projects/calculator/calculator.html'
+            : alert('Download the Expo App on your Mobile Device and proceed to scan the QR code to see View App')
+            // if(key===1){
+            //     window.location.href='https://junaidrazaq.github.io/junaid/Projects/weatherApp/index.html'
+            // }
+        }
+
+    return ( <>
             {projectSections.map((item, key)=>(
-                <Grid item xs={12} sm={8} md={4} style={{zIndex:2}}>
+                <Grid item xs={12} sm={8} md={4} style={{zIndex:2}} key={key}>
                     <Card className={classes.cardContainer}>
                         <CardActionArea>
                             <CardMedia
@@ -34,7 +51,7 @@ const Portfolio = () => {
                                 {/* <Button size="small" color="primary">
                                     Share
                                 </Button> */}
-                                <Button size="small" color="primary">
+                                <Button size="small" color="primary" onClick={() => openProject(key)}>
                                     Live Demo
                                 </Button>
                             </CardActions>
@@ -42,8 +59,8 @@ const Portfolio = () => {
                     </Card>
                 </Grid>
             ))}
-    </>
-    )
+    </>)}
+    
 
     return (
         <>
@@ -59,7 +76,7 @@ const Portfolio = () => {
                     effectDuration={1.3}
                     />
                 </Typography>
-                <Grid container justify='center' alignItems='center' spacing={4} style={{padding:20}}>
+                <Grid container justify='center' alignItems='center' style={{padding:20}}>
                     {project()}
                 </Grid>
             </Box>

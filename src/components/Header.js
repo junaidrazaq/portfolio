@@ -1,7 +1,7 @@
 import React from 'react'
 import avatar from '../Imgs/avatar.png'
 import { 
-    Box, Grid, Typography, Avatar,  
+    Box, Grid, Typography, Avatar, Container,  
     } from '@material-ui/core'
 import Typed from 'react-typed'
 import Styles from './Styles'
@@ -10,7 +10,7 @@ import Styles from './Styles'
 const Header = () => {
     const classes = Styles()
     return (
-        <Box className={classes.headerBox}>
+        <Container maxWidth='l' className={classes.headerBox}>
             <Grid container justify="center">
                 <Avatar className={classes.avatar} src={avatar} alt='ProfilePic'></Avatar>
             </Grid>
@@ -32,7 +32,7 @@ const Header = () => {
                     loop
                     />
                 </Typography>
-        </Box>
+        </Container>
     )
 }
 

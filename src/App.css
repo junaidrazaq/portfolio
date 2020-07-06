@@ -11,7 +11,7 @@
 }
 
 /* SMALLER-PC-IMAGE */
- @media screen and (max-width:960px){
+ @media screen and (max-width:960px) and (orientation: portrait){
     .homeBackImg{
         background: url(Imgs/pc-back-img1.jpg) no-repeat center center;
         position: absolute;

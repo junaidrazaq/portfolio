@@ -4,9 +4,10 @@ import Background from '../Imgs/pc-back-img.jpg'
 // import fonts from 'https://fonts.googleapis.com/css?family=Indie+Flower';
 
 const centerBox = {
-    position: 'absolute',
-    left: '50%', marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'}
+    position: 'relative',
+    // left: '50%',
+    // transform: 'translate(-50%)'
+}
 
 const headStyles = {
     backgroundColor:'black',
@@ -18,8 +19,9 @@ const Styles = makeStyles(theme => ({
 
 // Header \\ // \\ // Header \\
     headerBox: {
+        // backgroundColor:'red',
         ...centerBox,
-        top:'50%',
+        top:'20%',
         zIndex:1,
         textAlign:'center',
     },
@@ -118,7 +120,7 @@ const Styles = makeStyles(theme => ({
     portTitle: {
         position:'relative',
         top:10,
-        letterSpacing:'1.1rem', 
+        letterSpacing:'.8rem', 
         marginLeft:theme.spacing(2),
         fontSize:'2rem',
         fontFamily:'Libre Baskerville, serif'
