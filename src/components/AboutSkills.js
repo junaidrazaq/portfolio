@@ -70,6 +70,15 @@ const AboutSkills = () => {
                                                     </ListItem>
                                                     : console.log('No Third item')} 
 
+                                                    {   item.fourthText //if seconditem exists...
+                                                ? <ListItem button className={classes.nested}>
+                                                        <ListItemIcon>
+                                                        <StarBorder />
+                                                        </ListItemIcon>
+                                                        <ListItemText classes={{primary:classes.expanText}} primary={item.fourthText} />
+                                                    </ListItem>
+                                                    : console.log('No Third item')} 
+
                                         </List>
 
                                     </Collapse>

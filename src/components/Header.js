@@ -16,31 +16,31 @@ const headerStyles = {
 const Header = () => {
     const classes = Styles()
     return (
-        <Container maxWidth='sm' className={classes.headerBox}>
+        <Box className={classes.headerBox}>
             <Grid container justify="center">
+                <Box>
                 <Avatar className={classes.avatar} src={avatar} alt='ProfilePic'></Avatar>
+                    <Typography variant='h4' className={classes.headName}>
+                        <Typed
+                        style={{...headerStyles}}
+                        strings={['Junaid Razaq']}
+                        typeSpeed={10}
+                        />
+                    </Typography>
+                    <Typography variant='h6' style={{marginTop:'1rem'}}>
+                        <Typed
+                        style={{...headerStyles}}
+                        strings={[
+                            'Welcome to my Portfolio',
+                            'I am a Web Developer']}
+                            typeSpeed={30}
+                            backSpeed={40}
+                        loop
+                        />
+                    </Typography>
+                </Box>
             </Grid>
-            <Box style={{marginTop:'-1.5rem'}}>
-                <Typography variant='h4' className={classes.headName}>
-                    <Typed
-                    style={{...headerStyles}}
-                    strings={['Junaid Razaq']}
-                    typeSpeed={10}
-                    />
-                </Typography>
-                <Typography variant='h6' style={{marginTop:'1rem'}}>
-                    <Typed
-                    style={{...headerStyles}}
-                    strings={[
-                        'Welcome to my Portfolio',
-                        'I am a Web Developer']}
-                        typeSpeed={30}
-                        backSpeed={40}
-                    loop
-                    />
-                </Typography>
-            </Box>
-        </Container>
+        </Box>
     )
 }
 

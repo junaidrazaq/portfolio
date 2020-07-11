@@ -63,7 +63,7 @@ const Portfolio = () => {
         <>
         <Navbar/>
         <Box style={{position:'relative'}}>
-            <Box component='div' className={classes.portContainer}>
+            <Box component='div'>
                 <Typography align='center' className={classes.portTitle}>
                     <Random 
                     className={classes.portTitle}

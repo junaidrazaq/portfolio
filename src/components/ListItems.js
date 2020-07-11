@@ -33,7 +33,8 @@ export const menuItems = [
     },
     {
         listIcon: <ContactMail/>,
-        listText: 'Contact' 
+        listText: 'Contact',
+        listPath: '/contact'
     }
 ]
 
@@ -50,7 +51,8 @@ export const listItems = [
         expan: true,
         firstText:'BootStrap',
         secondText:'TailWind',
-        thirdText:'SaSS',
+        thirdText:'MaterialUi',
+        fourthText:'SaSS',
         listIcon: <DraftsIcon />
     },
     {

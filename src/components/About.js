@@ -48,7 +48,7 @@ const About = () => {
         <>
             {/* <Particless/> */}
             <Navbar/>
-            <Box className={classes.aboutContainer}>
+            <Box>
                 <Container maxWidth='sm'>
                     <Box className={classes.aboutBox}>
                             {colorText(color.message, color.colors)}

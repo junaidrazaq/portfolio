@@ -1,23 +1,24 @@
 // import React from 'react'
-import { makeStyles } from '@material-ui/core'
+import { makeStyles, withStyles } from '@material-ui/core'
 import Background from '../Imgs/pc-back-img.jpg'
 import zIndex from '@material-ui/core/styles/zIndex'
+import { TextField } from '@material-ui/core'
 // import fonts from 'https://fonts.googleapis.com/css?family=Indie+Flower';
 
-// const centerBox = {
-    // position: 'relative',
-    // left: '50%',
-    // transform: 'translate(-50%)'
-// }
+const centerBox = {
+    position:'absolute',
+    left:'50%',
+    transform: 'translate(-50%, -50%)',
+}
+
 
 /* // Styles for whole app \\ */
 const Styles = makeStyles(theme => ({
 
 // Header \\ // \\ // Header \\
     headerBox: {
-        position:'relative',
-        marginTop:'6rem',
-        zIndex:1,
+        ...centerBox,
+        top:'40%',
         textAlign:'center',
     },
     avatar: {
@@ -46,10 +47,6 @@ const Styles = makeStyles(theme => ({
 // Navbar \\ // \\ // Navbar \\ 
 
 // About \\ // About \\ // About \\
-    aboutContainer: {
-        background:'grey',
-        minHeight:'92vh'
-    },
     aboutBox: {
         position:'relative',
         top:10,
@@ -67,20 +64,6 @@ const Styles = makeStyles(theme => ({
         position:'relative',
         top:20,
     },
-    inAboutText:{
-        color:'white',
-        // display:'inline-block',
-        lineHeight:1.7,
-        backgroundColor:'grey',
-        marginLeft:12,
-        padding:10,
-        textAlign:'center',
-        marginTop:8,
-        borderRadius:10
-    },
-    headColor:{
-        color:'black'
-    },
     aboutColHead:{
         display:'inline-block',
         letterSpacing:7,
@@ -89,7 +72,7 @@ const Styles = makeStyles(theme => ({
         lineHeight:'.1rem',
         textAlign:'center',
         paddingLeft:'.5rem',
-        color:'white',
+        color:'black',
         marginTop:30
     },
     aboutAboutText: {
@@ -98,8 +81,7 @@ const Styles = makeStyles(theme => ({
     },
         // AboutSkills \\ // AboutSkills \\
             root: {
-                width: '100%',
-                // maxWidth: 200
+                width: '100%'
             },
             expanText:{
                 fontSize:10,
@@ -113,12 +95,6 @@ const Styles = makeStyles(theme => ({
 // About \\ // About \\ // About \\
 
 // Portfolio \\ // Portfolio \\ // Portfolio \\
-    portContainer: {
-        // background: '#ebf0f6',
-        background: 'grey',
-        height:'100%',
-        zIndex:'-3'
-    },
     portTitle: {
         position:'relative',
         top:10,
@@ -137,6 +113,22 @@ const Styles = makeStyles(theme => ({
     },
 // Portfolio \\ // Portfolio \\ // Portfolio \\
         
+// Contact \\ // Contact \\ // Contact \\
+    contactContainer: {
+        ...centerBox,
+        top:'50%',
+    },
+    contactButton:{
+        marginTop:'1rem',
+        color:'black',
+        borderColor:'black'
+    },
+    contactHead: {
+        textAlign:'center'
+    },
+// Contact \\ // Contact \\ // Contact \\
+
+
 // ParticleJs \\ // ParticleJs \\ // ParticleJs \\
     particlesCanvas: {
         position: 'absolute',
@@ -146,5 +138,36 @@ const Styles = makeStyles(theme => ({
 // ParticleJs \\ // ParticleJs \\ // ParticleJs \\
 }
 ))
-
 export default Styles
+
+
+// Contact field configurations
+export const InputField = withStyles({
+root: {
+    //Label Color (eg./Name)
+    "& label": {
+        color: 'black'
+    }, 
+    // Label Focused Color (eg./Name)
+    "& label.Mui-focused": {
+        color:'purple'
+    }, 
+    //Input text Color
+    "& .MuiInputBase-root": {
+        color:'purple'
+    },
+    "& .MuiOutlinedInput-root": {
+        //Label Border Color
+        "& fieldset": {
+            borderColor:'black'
+        },
+        // Label Border Hover Color
+        "&:hover fieldset": {
+            borderColor:'purple'
+        },
+        "& .Mui-focused fieldset": {
+            borderColor:'red'
+        },
+    }
+},
+})(TextField);
