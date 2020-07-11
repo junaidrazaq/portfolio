@@ -40,33 +40,50 @@ export const menuItems = [
 // Skills list in the About Page
 export const listItems = [
     {
+        id:1,
         listText: 'Html',
         listIcon: <SendIcon/>
     },
     {
+        id:2,
         listText: 'CSS',
+        expan: true,
+        firstText:'BootStrap',
+        secondText:'TailWind',
+        thirdText:'SaSS',
         listIcon: <DraftsIcon />
     },
     {
+        id:3,
         listText: 'JavaScript',
         listIcon: <InboxIcon />
     },
     {
+        id:4,
         listText: 'React',
-        firstText:'React-Router',
-        secondText:'React-Native',
         listIcon: <SendIcon/>,
-        expan: true
+        expan: true,
+        // SubItems
+        firstText:'React-Router',
+        secondText:'React-Navigation',
+        thirdText:'React-Native',
     },
     {
+        id:5,
+        listText: 'Database',
+        listIcon: <DraftsIcon />,
+        expan: true,
+        // SubItems
+        firstText:'FireBase',
+        secondText:'SQL',
+    },
+    {
+        id:6,
         listText: 'ReactJs',
         listIcon: <DraftsIcon />
     },
     {
-        listText: 'ReactJs',
-        listIcon: <DraftsIcon />
-    },
-    {
+        id:7,
         listText: 'ReactJs',
         listIcon: <DraftsIcon />
     }

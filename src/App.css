@@ -1,8 +1,9 @@
-/* PC-IMAGE */
+/* PC-IMAGE *//* PC-IMAGE *//* PC-IMAGE */
+/* PC-IMAGE *//* PC-IMAGE *//* PC-IMAGE */
 .homeBackImg{
     background: url(Imgs/pc-back-img.jpg) no-repeat center center;
     position: absolute;
-    height:100%; width:100%;
+    min-height:100%; width:100%;
     z-index: -2; /* 1 below the particlesJs */
     background: cover;
     -webkit-background: cover;
@@ -10,25 +11,40 @@
     -o-background: cover;
 }
 
-/* SMALLER-PC-IMAGE */
+
+
+/* SMALLER-PC-IMAGE *//* SMALLER-PC-IMAGE *//* SMALLER-PC-IMAGE */
+/* SMALLER-PC-IMAGE *//* SMALLER-PC-IMAGE *//* SMALLER-PC-IMAGE */
  @media screen and (max-width:960px) and (orientation: portrait){
     .homeBackImg{
         background: url(Imgs/pc-back-img1.jpg) no-repeat center center;
         position: absolute;
-        height:100%; width:100%;
+        min-height:100%; width:100%;
         z-index: -2; /* 1 below the particlesJs */
         background: contain;
         -webkit-background: contain;
         -moz-background: contain;
         -o-background: contain;
 }} 
+    @media screen and (max-width:960px) and (orientation: landscape){
+        .homeBackImg{
+            background: url(Imgs/pc-back-img1.jpg) no-repeat center center;
+            position: absolute;
+            min-height:130%; width:100%;
+            z-index: -2; /* 1 below the particlesJs */
+            background: contain;
+            -webkit-background: contain;
+            -moz-background: contain;
+            -o-background: contain;
+    }} 
+
 
 /* MOBILE-IMAGE */
 @media screen and (max-width:500px){
     .homeBackImg{
         background: url(Imgs/back-img.jpg) no-repeat center center;
         position: absolute;
-        height:100%; width:100%;
+        min-height:100%; width:100%;
         z-index: -2; /* 1 below the particlesJs */
         background: cover;
         -webkit-background: cover;

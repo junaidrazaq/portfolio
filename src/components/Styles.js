@@ -1,27 +1,22 @@
 // import React from 'react'
 import { makeStyles } from '@material-ui/core'
 import Background from '../Imgs/pc-back-img.jpg'
+import zIndex from '@material-ui/core/styles/zIndex'
 // import fonts from 'https://fonts.googleapis.com/css?family=Indie+Flower';
 
-const centerBox = {
-    position: 'relative',
+// const centerBox = {
+    // position: 'relative',
     // left: '50%',
     // transform: 'translate(-50%)'
-}
-
-const headStyles = {
-    backgroundColor:'black',
-    borderRadius:12,
-    padding:5, color: 'white'}
+// }
 
 /* // Styles for whole app \\ */
 const Styles = makeStyles(theme => ({
 
 // Header \\ // \\ // Header \\
     headerBox: {
-        // backgroundColor:'red',
-        ...centerBox,
-        top:'20%',
+        position:'relative',
+        marginTop:'6rem',
         zIndex:1,
         textAlign:'center',
     },
@@ -30,20 +25,13 @@ const Styles = makeStyles(theme => ({
         height: theme.spacing(19),
         margin: theme.spacing(6),
     },
-    headText: {
-        color: '#aaa',
-        top:'2vh',
-        textAlign:'center',
-        ...headStyles
-    },
-    headConfig: headStyles,
 // Header \\ // \\ // Header \\
 
 // Navbar \\ // \\ // Navbar \\ 
     menuSlideContainer: {
         width: 250,
         background: '#777',
-        height: '100vh'
+        height: '100%'
     },
     navatar: {
         display: 'block',
@@ -60,28 +48,28 @@ const Styles = makeStyles(theme => ({
 // About \\ // About \\ // About \\
     aboutContainer: {
         background:'grey',
-        // display:'inline-block'
         minHeight:'92vh'
     },
     aboutBox: {
-        // ...centerBox,
-        top:'13%',
-        color:'white',
-        letterSpacing:.1,
-        fontSize:20,
-        padding:20,
-        // marginTop:10,
+        position:'relative',
+        top:10,
+        padding:8,
+        borderRadius:10,
+        backgroundColor:'black',
         textAlign:'center',
         // zIndex:-1,
-        // display:'inline-block'
     },
-    aboutText:{
-        color: '#ac3b61',
-        position:'relative'
+    aboutHead:{
+        color: 'plum',
+        textAlign:'center'
+    },
+    aboutSkillsCon: {
+        position:'relative',
+        top:20,
     },
     inAboutText:{
         color:'white',
-        display:'inline-block',
+        // display:'inline-block',
         lineHeight:1.7,
         backgroundColor:'grey',
         marginLeft:12,
@@ -93,18 +81,32 @@ const Styles = makeStyles(theme => ({
     headColor:{
         color:'black'
     },
+    aboutColHead:{
+        display:'inline-block',
+        letterSpacing:7,
+    },
+    aboutAbout: {
+        lineHeight:'.1rem',
+        textAlign:'center',
+        paddingLeft:'.5rem',
+        color:'white',
+        marginTop:30
+    },
+    aboutAboutText: {
+        letterSpacing:'.1rem',
+        fontSize:'.8rem',
+    },
         // AboutSkills \\ // AboutSkills \\
             root: {
                 width: '100%',
-                maxWidth: 360
+                // maxWidth: 200
             },
             expanText:{
-                fontSize:12,
+                fontSize:10,
                 color:'#55BCC9'
             },
-            unExpanText:{ marginRight:0 },
-            aboutList: { color:'black' },
-            aboutIcon:{ color:'maroon' },
+            aboutList: { color:'pink'},
+            aboutIcon:{ color:'plum'},
             nested: { paddingLeft: theme.spacing(3)},
         // AboutSkills \\ // AboutSkills \\
 

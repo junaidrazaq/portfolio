@@ -21,10 +21,7 @@ const Portfolio = () => {
             ? window.location.href='https://junaidrazaq.github.io/junaid/Projects/RockPaperScissors/index.html'
             : key==4 
             ? window.location.href='https://junaidrazaq.github.io/junaid/Projects/calculator/calculator.html'
-            : alert('Download the Expo App on your Mobile Device and proceed to scan the QR code to see View App')
-            // if(key===1){
-            //     window.location.href='https://junaidrazaq.github.io/junaid/Projects/weatherApp/index.html'
-            // }
+            : alert('Download the Expo App on your Mobile Device and proceed to scan the QR code to View App')
         }
 
     return ( <>

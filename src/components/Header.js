@@ -6,32 +6,40 @@ import {
 import Typed from 'react-typed'
 import Styles from './Styles'
 
+const headerStyles = {
+    color:'white',
+    backgroundColor:'black',
+    borderRadius:12,
+    padding:10
+}
 
 const Header = () => {
     const classes = Styles()
     return (
-        <Container maxWidth='l' className={classes.headerBox}>
+        <Container maxWidth='sm' className={classes.headerBox}>
             <Grid container justify="center">
                 <Avatar className={classes.avatar} src={avatar} alt='ProfilePic'></Avatar>
             </Grid>
-                <Typography variant='h4'>
-                    <Typed 
-                    className={classes.headConfig}
+            <Box style={{marginTop:'-1.5rem'}}>
+                <Typography variant='h4' className={classes.headName}>
+                    <Typed
+                    style={{...headerStyles}}
                     strings={['Junaid Razaq']}
                     typeSpeed={10}
                     />
                 </Typography>
-                <Typography variant='h6'>
+                <Typography variant='h6' style={{marginTop:'1rem'}}>
                     <Typed
-                    className={classes.headText}
+                    style={{...headerStyles}}
                     strings={[
                         'Welcome to my Portfolio',
                         'I am a Web Developer']}
-                    typeSpeed={30}
-                    backSpeed={40}
+                        typeSpeed={30}
+                        backSpeed={40}
                     loop
                     />
                 </Typography>
+            </Box>
         </Container>
     )
 }

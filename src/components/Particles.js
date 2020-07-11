@@ -13,11 +13,13 @@ import bootstrap from '../Imgs/bootStrap.png'
 import footBall from '../Imgs/footBall.png'
 import Styles from './Styles'
 
-const Particless = () => {
+const Particless = (props) => {
     const classes = Styles()
     return (
         <>
         <Particles
+            width={props.width}
+            height={props.height}
             canvasClassName={classes.particlesCanvas}
             params={{
                 particles: {

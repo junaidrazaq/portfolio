@@ -16,34 +16,35 @@ import {listItems} from './ListItems'
 const AboutSkills = () => {
     const classes = Styles()
 
-    const [open, setOpen] = React.useState(false);
-    const handleClick = () => {
-      setOpen(!open);
-    };
+    const [open, setOpen] = React.useState({});
+    const handleClick = (id) => {
+        setOpen(prevState => ({...prevState, [id]: !prevState[id]}))
+    }
 
     const outputList = () => (
         <>
             <List
-                style={{color:'white'}}
                 component="nav"
                 className={classes.root}
             >
-                {
-                listItems.map((item, index) => {
-                    // if expandable items exist, show them
+                { //Map through the ListItems and...
+                listItems.map((item) => {
+                    // {console.log(index)}
+                    // if expandable items exist, expand them
                     if(item.expan) 
-                    {           {/* Use fragment instad of <></> because key attribute is required */}
-                        return <Fragment key={index}>
-                                    <ListItem button onClick={handleClick} className={classes.aboutList}>
+                    { 
+                                  {/* Use fragment instad of <></> because key attribute is required */}
+                        return <Fragment key={item.id}>
+                                    <ListItem button onClick={() => handleClick(item.id)} className={classes.aboutList}>
                                         <ListItemIcon className={classes.aboutIcon}>
                                             {item.listIcon}
                                         </ListItemIcon>
-                                        <ListItemText primary={item.listText} />
+                                        <ListItemText primary={item.listText}/>
                                         {open ? <ExpandLess /> : <ExpandMore />}
                                     </ListItem>
-
-                                    <Collapse in={open} timeout="auto" unmountOnExit>
-                                        
+                                    
+                                    <Collapse in={open[item.id]} timeout="auto" unmountOnExit>
+                                        {/* {console.log(item.id)} */}
                                         <List component="div" disablePadding>
                                             <ListItem button className={classes.nested}>
                                                 <ListItemIcon>
@@ -51,35 +52,62 @@ const AboutSkills = () => {
                                                 </ListItemIcon>
                                                 <ListItemText classes={{primary:classes.expanText}} primary={item.firstText} />
                                             </ListItem>
+                                            {   item.secondText //if seconditem exists...
+                                                ? <ListItem button className={classes.nested}>
+                                                        <ListItemIcon>
+                                                        <StarBorder />
+                                                        </ListItemIcon>
+                                                        <ListItemText classes={{primary:classes.expanText}} primary={item.secondText} />
+                                                    </ListItem>
+                                                    : console.log('No Third Item')}
 
-                                        {   item.secondText //if seconditem exists...
-                                          ? <ListItem button className={classes.nested}>
-                                                <ListItemIcon>
-                                                <StarBorder />
-                                                </ListItemIcon>
-                                                <ListItemText classes={{primary:classes.expanText}} primary={item.secondText} />
-                                            </ListItem>
-                                            : console.log('No Third Item')}
+                                                {   item.thirdText //if seconditem exists...
+                                                ? <ListItem button className={classes.nested}>
+                                                        <ListItemIcon>
+                                                        <StarBorder />
+                                                        </ListItemIcon>
+                                                        <ListItemText classes={{primary:classes.expanText}} primary={item.thirdText} />
+                                                    </ListItem>
+                                                    : console.log('No Third item')} 
+
                                         </List>
 
                                     </Collapse>
                                 </Fragment>
                     } else {
-                        return <ListItem button className={classes.aboutList} key={index}>
+                        return <ListItem button className={classes.aboutList} key={item.id}>
                                     <ListItemIcon className={classes.aboutIcon}>
                                         {item.listIcon}
                                     </ListItemIcon>
-                                    <ListItemText classes={{primary:classes.unExpanText}} primary={item.listText} />
+                                    <ListItemText primary={item.listText} />
                                 </ListItem>
                     }    
                 })}    
             </List>
         </>
     )
-
+    
     return (
         outputList()
-    )
-}
+        )
+    }
 
-export default AboutSkills
+    export default AboutSkills
+
+    // {   item.secondText //if seconditem exists...
+    //     ? <ListItem button className={classes.nested}>
+    //             <ListItemIcon>
+    //             <StarBorder />
+    //             </ListItemIcon>
+    //             <ListItemText classes={{primary:classes.expanText}} primary={item.secondText} />
+    //         </ListItem>
+    //         : console.log('No Third Item')}
+
+    //     {   item.thirdText //if seconditem exists...
+    //     ? <ListItem button className={classes.nested}>
+    //             <ListItemIcon>
+    //             <StarBorder />
+    //             </ListItemIcon>
+    //             <ListItemText classes={{primary:classes.expanText}} primary={item.thirdText} />
+    //         </ListItem>
+    //         : console.log('No Third Item')} 
