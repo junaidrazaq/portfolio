@@ -35,6 +35,7 @@ const Portfolio = () => {
                             height='240'
                             image={item.image}
                             className={classes.cardImage}
+                            onClick={() => openProject(key)}
                             />
                             <CardContent style={{textAlign:'center'}}>
                                 <Typography gutterBottom variant='h5'>
@@ -48,7 +49,7 @@ const Portfolio = () => {
                                 {/* <Button size="small" color="primary">
                                     Share
                                 </Button> */}
-                                <Button size="small" color="primary" onClick={() => openProject(key)}>
+                                <Button size="small" color="primary">
                                     Live Demo
                                 </Button>
                             </CardActions>

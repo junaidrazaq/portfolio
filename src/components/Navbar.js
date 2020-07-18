@@ -8,7 +8,7 @@ import {
     } from '@material-ui/core'
 import avatar from '../Imgs/avatar.png'
 //Icons
-import TouchAppOutlinedIcon from '@material-ui/icons/TouchAppOutlined';
+import TouchAppOutlinedIcon from '@material-ui/icons/Menu';
 import Styles from './Styles'
 import {menuItems} from './ListItems'
 
