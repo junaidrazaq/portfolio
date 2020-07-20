@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import { Box, Grid, Card, CardMedia, CardActionArea, Typography, CardContent, CardActions, Button } from '@material-ui/core'
 import Styles from './Styles'
 import { Random } from 'react-animated-text'
 import { projectSections } from './ListItems' 
-import Particless from './Particles'
+import { Waypoint } from 'react-waypoint';
 
 
 
@@ -59,10 +59,41 @@ const Portfolio = () => {
             ))}
     </>)}
     
+    const [styled, setStyled] = useState()
+
+    // useEffect(() => {
+    //     let isMounted = true; // note this flag denote mount status
+    //     style().then(data => {
+    //       if (isMounted) setStyled(data);
+    //     })
+    //     return () => { isMounted = false }; // use effect cleanup to set flag false, if unmounted
+    //   });
+    
+    const handleWaypointLeave = () => (
+        setStyled(false)
+    )
+
+        const style = () => (
+            styled==false
+            ? {
+                position:'fixed',
+                width:'100%',
+                zIndex:99
+            }
+            : {position:'relative'}
+        )
 
     return (
         <>
-        <Navbar/>
+        <Waypoint
+        onLeave={handleWaypointLeave}
+        >
+        <div style={style()}>
+            <Navbar/>
+        </div>
+        </Waypoint>
+
+        {/* <Navbar/> */}
         <Box style={{position:'relative'}}>
             <Box component='div'>
                 <Typography align='center' className={classes.portTitle}>

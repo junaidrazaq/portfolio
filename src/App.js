@@ -6,7 +6,6 @@ import About from './components/About';
 import {Route} from 'react-router-dom';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact'
-import Styles from './components/Styles';
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 
 // Background Color for whole Site/App
@@ -19,7 +18,6 @@ const theme = createMuiTheme({
 });
 
 function App() {
-  const classes = Styles()
   return (
     <>
       <MuiThemeProvider theme={theme}>
